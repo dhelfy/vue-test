@@ -1,4 +1,6 @@
 <script setup>
+import Button from 'primevue/button';
+import InputText from 'primevue/inputtext';
 import { useGlobalStore } from '@/store/globalStore';
 import { ref } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
@@ -35,9 +37,9 @@ const onLogin = () => {
 <template>
   <div class="loginForm">
     <h1>Вход</h1>
-    <input type="text" placeholder="Логин" v-model="login">
-    <input type="text" placeholder="Пароль" v-model="pass">
-    <button @click="onLogin">Войти</button>
+    <InputText type="text" v-model="login" placeholder="Логин"/>
+    <InputText type="text" v-model="pass" placeholder="Пароль"/>
+    <Button label="Войти" @click="onLogin"></Button>
     <RouterLink to="register">Регистрация</RouterLink>
   </div>
 </template>
